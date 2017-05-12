@@ -122,7 +122,6 @@ const updated = '____skate_updated';
 /* harmony export (immutable) */ __webpack_exports__["i"] = updated;
 
 
-
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -134,13 +133,10 @@ const updated = '____skate_updated';
 /**
  * Returns array of owned property names and symbols for the given object
  */
-function getPropNamesAndSymbols (obj = {}) {
+function getPropNamesAndSymbols(obj = {}) {
   const listOfKeys = Object.getOwnPropertyNames(obj);
-  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__is_type__["a" /* isFunction */])(Object.getOwnPropertySymbols)
-    ? listOfKeys.concat(Object.getOwnPropertySymbols(obj))
-    : listOfKeys;
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__is_type__["a" /* isFunction */])(Object.getOwnPropertySymbols) ? listOfKeys.concat(Object.getOwnPropertySymbols(obj)) : listOfKeys;
 }
-
 
 /***/ }),
 /* 2 */
@@ -150,7 +146,7 @@ function getPropNamesAndSymbols (obj = {}) {
 const isFunction = val => typeof val === 'function';
 /* harmony export (immutable) */ __webpack_exports__["a"] = isFunction;
 
-const isObject = val => (typeof val === 'object' && val !== null);
+const isObject = val => typeof val === 'object' && val !== null;
 /* harmony export (immutable) */ __webpack_exports__["c"] = isObject;
 
 const isString = val => typeof val === 'string';
@@ -163,14 +159,12 @@ const isUndefined = val => typeof val === 'undefined';
 /* harmony export (immutable) */ __webpack_exports__["b"] = isUndefined;
 
 
-
 /***/ }),
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony default export */ __webpack_exports__["a"] = (typeof window === 'undefined' ? global : window);
-
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(38)))
 
 /***/ }),
@@ -188,7 +182,6 @@ const isUndefined = val => typeof val === 'undefined';
   return obj;
 });
 
-
 /***/ }),
 /* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -199,7 +192,6 @@ const isUndefined = val => typeof val === 'undefined';
   return namespace && (data[namespace] || (data[namespace] = {})) || data; // eslint-disable-line no-mixed-operators
 });
 
-
 /***/ }),
 /* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -208,7 +200,6 @@ const isUndefined = val => typeof val === 'undefined';
 /* harmony default export */ __webpack_exports__["a"] = (function (val) {
   return typeof val === 'undefined' || val === null;
 });
-
 
 /***/ }),
 /* 7 */
@@ -226,17 +217,17 @@ const isUndefined = val => typeof val === 'undefined';
 
 
 
-function get (elem) {
+function get(elem) {
   const props = {};
 
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_get_prop_names_and_symbols__["a" /* default */])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__util_get_props_map__["a" /* default */])(elem.constructor)).forEach((nameOrSymbol) => {
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_get_prop_names_and_symbols__["a" /* default */])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__util_get_props_map__["a" /* default */])(elem.constructor)).forEach(nameOrSymbol => {
     props[nameOrSymbol] = elem[nameOrSymbol];
   });
 
   return props;
 }
 
-function set (elem, newProps) {
+function set(elem, newProps) {
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_assign__["a" /* default */])(elem, newProps);
   if (elem[__WEBPACK_IMPORTED_MODULE_0__util_symbols__["f" /* renderer */]]) {
     elem[__WEBPACK_IMPORTED_MODULE_0__util_symbols__["f" /* renderer */]]();
@@ -246,7 +237,6 @@ function set (elem, newProps) {
 /* harmony default export */ __webpack_exports__["a"] = (function (elem, newProps) {
   return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__util_is_type__["b" /* isUndefined */])(newProps) ? get(elem) : set(elem, newProps);
 });
-
 
 /***/ }),
 /* 8 */
@@ -292,6 +282,7 @@ function set (elem, newProps) {
 /**
  * A cached reference to the hasOwnProperty function.
  */
+
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
@@ -1340,7 +1331,7 @@ var cachedClearTimeout;
 function defaultSetTimout() {
     throw new Error('setTimeout has not been defined');
 }
-function defaultClearTimeout () {
+function defaultClearTimeout() {
     throw new Error('clearTimeout has not been defined');
 }
 (function () {
@@ -1362,7 +1353,7 @@ function defaultClearTimeout () {
     } catch (e) {
         cachedClearTimeout = defaultClearTimeout;
     }
-} ())
+})();
 function runTimeout(fun) {
     if (cachedSetTimeout === setTimeout) {
         //normal enviroments in sane situations
@@ -1376,17 +1367,15 @@ function runTimeout(fun) {
     try {
         // when when somebody has screwed with setTimeout but no I.E. maddness
         return cachedSetTimeout(fun, 0);
-    } catch(e){
+    } catch (e) {
         try {
             // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
             return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
+        } catch (e) {
             // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
             return cachedSetTimeout.call(this, fun, 0);
         }
     }
-
-
 }
 function runClearTimeout(marker) {
     if (cachedClearTimeout === clearTimeout) {
@@ -1401,19 +1390,16 @@ function runClearTimeout(marker) {
     try {
         // when when somebody has screwed with setTimeout but no I.E. maddness
         return cachedClearTimeout(marker);
-    } catch (e){
+    } catch (e) {
         try {
             // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
             return cachedClearTimeout.call(null, marker);
-        } catch (e){
+        } catch (e) {
             // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
             // Some versions of I.E. have different rules for clearTimeout vs setTimeout
             return cachedClearTimeout.call(this, marker);
         }
     }
-
-
-
 }
 var queue = [];
 var draining = false;
@@ -1443,7 +1429,7 @@ function drainQueue() {
     draining = true;
 
     var len = queue.length;
-    while(len) {
+    while (len) {
         currentQueue = queue;
         queue = [];
         while (++queueIndex < len) {
@@ -1499,18 +1485,23 @@ process.emit = noop;
 process.prependListener = noop;
 process.prependOnceListener = noop;
 
-process.listeners = function (name) { return [] }
+process.listeners = function (name) {
+    return [];
+};
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
 };
 
-process.cwd = function () { return '/' };
+process.cwd = function () {
+    return '/';
+};
 process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
-process.umask = function() { return 0; };
-
+process.umask = function () {
+    return 0;
+};
 
 /***/ }),
 /* 10 */
@@ -1557,21 +1548,19 @@ const _prevOldValue = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__util_cr
 const _prevNewValue = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__util_create_symbol__["a" /* default */])('prevNewValue');
 
 // TEMPORARY: Once deprecations in this file are removed, this can be removed.
-function deprecated (elem, oldUsage, newUsage) {
+function deprecated(elem, oldUsage, newUsage) {
   if (process.env.NODE_ENV !== 'production') {
     const ownerName = elem.localName ? elem.localName : String(elem);
     console.warn(`${ownerName} ${oldUsage} is deprecated. Use ${newUsage}.`);
   }
 }
 
-function preventDoubleCalling (elem, name, oldValue, newValue) {
-  return name === elem[_prevName] &&
-    oldValue === elem[_prevOldValue] &&
-    newValue === elem[_prevNewValue];
+function preventDoubleCalling(elem, name, oldValue, newValue) {
+  return name === elem[_prevName] && oldValue === elem[_prevOldValue] && newValue === elem[_prevNewValue];
 }
 
 // TODO remove when not catering to Safari < 10.
-function createNativePropertyDescriptors (Ctor) {
+function createNativePropertyDescriptors(Ctor) {
   const propDefs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__util_get_props_map__["a" /* default */])(Ctor);
   return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_get_prop_names_and_symbols__["a" /* default */])(propDefs).reduce((propDescriptors, nameOrSymbol) => {
     propDescriptors[nameOrSymbol] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__lifecycle_props_init__["a" /* createNativePropertyDescriptor */])(propDefs[nameOrSymbol]);
@@ -1582,11 +1571,11 @@ function createNativePropertyDescriptors (Ctor) {
 // TODO refactor when not catering to Safari < 10.
 //
 // We should be able to simplify this where all we do is Object.defineProperty().
-function createInitProps (Ctor) {
+function createInitProps(Ctor) {
   const propDescriptors = createNativePropertyDescriptors(Ctor);
 
-  return (elem) => {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_get_prop_names_and_symbols__["a" /* default */])(propDescriptors).forEach((nameOrSymbol) => {
+  return elem => {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_get_prop_names_and_symbols__["a" /* default */])(propDescriptors).forEach(nameOrSymbol => {
       const propDescriptor = propDescriptors[nameOrSymbol];
       propDescriptor.beforeDefineProperty(elem);
 
@@ -1623,43 +1612,40 @@ function createInitProps (Ctor) {
   };
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (class extends HTMLElement {
-
+class _class extends HTMLElement {
 
   /**
    * Returns unique attribute names configured with props and
    * those set on the Component constructor if any
    */
-  static get observedAttributes () {
+  static get observedAttributes() {
     const attrsOnCtor = this.hasOwnProperty(__WEBPACK_IMPORTED_MODULE_1__util_symbols__["a" /* ctorObservedAttributes */]) ? this[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["a" /* ctorObservedAttributes */]] : [];
     const propDefs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__util_get_props_map__["a" /* default */])(this);
 
     // Use Object.keys to skips symbol props since they have no linked attributes
-    const attrsFromLinkedProps = Object.keys(propDefs).map(propName =>
-      propDefs[propName].attrSource).filter(Boolean);
+    const attrsFromLinkedProps = Object.keys(propDefs).map(propName => propDefs[propName].attrSource).filter(Boolean);
 
     const all = attrsFromLinkedProps.concat(attrsOnCtor).concat(super.observedAttributes);
-    return all.filter((item, index) =>
-      all.indexOf(item) === index);
+    return all.filter((item, index) => all.indexOf(item) === index);
   }
 
-  static set observedAttributes (value) {
+  static set observedAttributes(value) {
     value = Array.isArray(value) ? value : [];
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_14__util_set_ctor_native_property__["a" /* default */])(this, 'observedAttributes', value);
   }
 
   // Returns superclass props overwritten with this Component props
-  static get props () {
+  static get props() {
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_assign__["a" /* default */])({}, super.props, this[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["b" /* ctorProps */]]);
   }
 
-  static set props (value) {
+  static set props(value) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_14__util_set_ctor_native_property__["a" /* default */])(this, __WEBPACK_IMPORTED_MODULE_1__util_symbols__["b" /* ctorProps */], value);
   }
 
   // Passing args is designed to work with document-register-element. It's not
   // necessary for the webcomponents/custom-element polyfill.
-  constructor (...args) {
+  constructor(...args) {
     super(...args);
 
     const { constructor } = this;
@@ -1717,7 +1703,7 @@ function createInitProps (Ctor) {
   }
 
   // Custom Elements v1
-  connectedCallback () {
+  connectedCallback() {
     // Reflect attributes pending values
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_attributes_manager__["a" /* default */])(this).resumeAttributesUpdates();
 
@@ -1743,7 +1729,7 @@ function createInitProps (Ctor) {
   }
 
   // Custom Elements v1
-  disconnectedCallback () {
+  disconnectedCallback() {
     // Suspend updating attributes until re-connected
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_attributes_manager__["a" /* default */])(this).suspendAttributesUpdates();
 
@@ -1761,7 +1747,7 @@ function createInitProps (Ctor) {
   }
 
   // Custom Elements v1
-  attributeChangedCallback (name, oldValue, newValue) {
+  attributeChangedCallback(name, oldValue, newValue) {
     // Polyfill calls this twice.
     if (preventDoubleCalling(this, name, oldValue, newValue)) {
       return;
@@ -1778,9 +1764,7 @@ function createInitProps (Ctor) {
       if (changedExternally) {
         // Sync up the property.
         const propDef = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__util_get_props_map__["a" /* default */])(this.constructor)[propNameOrSymbol];
-        const newPropVal = newValue !== null && propDef.deserialize
-          ? propDef.deserialize(newValue)
-          : newValue;
+        const newPropVal = newValue !== null && propDef.deserialize ? propDef.deserialize(newValue) : newValue;
 
         const propData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__util_data__["a" /* default */])(this, 'props')[propNameOrSymbol];
         propData.settingPropFromAttrSource = true;
@@ -1800,7 +1784,7 @@ function createInitProps (Ctor) {
   }
 
   // Skate
-  updatedCallback (prevProps) {
+  updatedCallback(prevProps) {
     if (this.constructor.hasOwnProperty('updated')) {
       deprecated(this, 'static updated', 'updatedCallback');
     }
@@ -1808,7 +1792,7 @@ function createInitProps (Ctor) {
   }
 
   // Skate
-  renderedCallback () {
+  renderedCallback() {
     if (this.constructor.hasOwnProperty('rendered')) {
       deprecated(this, 'static rendered', 'renderedCallback');
     }
@@ -1820,7 +1804,7 @@ function createInitProps (Ctor) {
   // Maps to the static renderer() callback. That logic should be moved here
   // when that is finally removed.
   // TODO: finalize how to support different rendering strategies.
-  rendererCallback () {
+  rendererCallback() {
     // TODO: cannot move code here because tests expects renderer function to still exist on constructor!
     return this.constructor.renderer(this);
   }
@@ -1828,7 +1812,7 @@ function createInitProps (Ctor) {
   // Skate
   // @internal
   // Invokes the complete render lifecycle.
-  [__WEBPACK_IMPORTED_MODULE_1__util_symbols__["f" /* renderer */]] () {
+  [__WEBPACK_IMPORTED_MODULE_1__util_symbols__["f" /* renderer */]]() {
     if (this[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["h" /* rendering */]] || !this[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["g" /* connected */]]) {
       return;
     }
@@ -1847,14 +1831,14 @@ function createInitProps (Ctor) {
   // Skate
   // @internal
   // Calls the updatedCallback() with previous props.
-  [__WEBPACK_IMPORTED_MODULE_1__util_symbols__["i" /* updated */]] () {
+  [__WEBPACK_IMPORTED_MODULE_1__util_symbols__["i" /* updated */]]() {
     const prevProps = this[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["j" /* props */]];
     this[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["j" /* props */]] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__props__["a" /* default */])(this);
     return this.updatedCallback(prevProps);
   }
 
   // Skate
-  static extend (definition = {}, Base = this) {
+  static extend(definition = {}, Base = this) {
     // Create class for the user.
     class Ctor extends Base {}
 
@@ -1877,14 +1861,14 @@ function createInitProps (Ctor) {
   // DEPRECATED
   //
   // Stubbed in case any subclasses are calling it.
-  static rendered () {}
+  static rendered() {}
 
   // Skate
   //
   // DEPRECATED
   //
   // Move this to rendererCallback() before removing.
-  static renderer (elem) {
+  static renderer(elem) {
     if (!elem.shadowRoot) {
       elem.attachShadow({ mode: 'open' });
     }
@@ -1893,7 +1877,7 @@ function createInitProps (Ctor) {
       if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_12__util_is_type__["a" /* isFunction */])(possibleFn)) {
         possibleFn();
       } else if (Array.isArray(possibleFn)) {
-        possibleFn.forEach((fn) => {
+        possibleFn.forEach(fn => {
           if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_12__util_is_type__["a" /* isFunction */])(fn)) {
             fn();
           }
@@ -1907,7 +1891,7 @@ function createInitProps (Ctor) {
   // DEPRECATED
   //
   // Move this to updatedCallback() before removing.
-  static updated (elem, previousProps) {
+  static updated(elem, previousProps) {
     // The 'previousProps' will be undefined if it is the initial render.
     if (!previousProps) {
       return true;
@@ -1930,8 +1914,10 @@ function createInitProps (Ctor) {
 
     return false;
   }
-});
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = _class;
 
+_class.is = '';
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(9)))
 
 /***/ }),
@@ -1952,7 +1938,7 @@ function createInitProps (Ctor) {
  * Postpones attributes updates until when connected.
  */
 class AttributesManager {
-  constructor (elem) {
+  constructor(elem) {
     this.elem = elem;
     this.connected = false;
     this.pendingValues = {};
@@ -1962,14 +1948,14 @@ class AttributesManager {
   /**
    * Called from disconnectedCallback
    */
-  suspendAttributesUpdates () {
+  suspendAttributesUpdates() {
     this.connected = false;
   }
 
   /**
    * Called from connectedCallback
    */
-  resumeAttributesUpdates () {
+  resumeAttributesUpdates() {
     this.connected = true;
     const names = Object.keys(this.pendingValues);
     names.forEach(name => {
@@ -1986,7 +1972,7 @@ class AttributesManager {
    * Returns true if the value is different from the one set internally
    * using setAttrValue()
    */
-  onAttributeChanged (name, value) {
+  onAttributeChanged(name, value) {
     value = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__to_null_or_string__["a" /* default */])(value);
 
     // A new attribute value voids the pending one
@@ -2003,7 +1989,7 @@ class AttributesManager {
    * When the component is not connected the value is saved and
    * the attribute is only updated when the component is re-connected.
    */
-  setAttrValue (name, value) {
+  setAttrValue(name, value) {
     value = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__to_null_or_string__["a" /* default */])(value);
 
     this.lastSetValues[name] = value;
@@ -2016,7 +2002,7 @@ class AttributesManager {
     }
   }
 
-  _syncAttrValue (name, value) {
+  _syncAttrValue(name, value) {
     const currAttrValue = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__to_null_or_string__["a" /* default */])(this.elem.getAttribute(name));
     if (value !== currAttrValue) {
       if (value === null) {
@@ -2027,7 +2013,7 @@ class AttributesManager {
     }
   }
 
-  _clearPendingValue (name) {
+  _clearPendingValue(name) {
     if (name in this.pendingValues) {
       delete this.pendingValues[name];
     }
@@ -2041,7 +2027,7 @@ const $attributesMgr = '____skate_attributesMgr';
  * @internal
  * Returns attribute manager instance for the given Component
  */
-function getAttrMgr (elem) {
+function getAttrMgr(elem) {
   let mgr = elem[$attributesMgr];
   if (!mgr) {
     mgr = new AttributesManager(elem);
@@ -2049,7 +2035,6 @@ function getAttrMgr (elem) {
   }
   return mgr;
 }
-
 
 /***/ }),
 /* 12 */
@@ -2072,7 +2057,7 @@ function getAttrMgr (elem) {
  *
  * The map is created from the result of: static get props
  */
-function getPropsMap (Ctor) {
+function getPropsMap(Ctor) {
   // Must be defined on constructor and not from a superclass
   if (!Ctor.hasOwnProperty(__WEBPACK_IMPORTED_MODULE_0__symbols__["k" /* ctorPropsMap */])) {
     const props = Ctor.props || {};
@@ -2087,7 +2072,6 @@ function getPropsMap (Ctor) {
   return Ctor[__WEBPACK_IMPORTED_MODULE_0__symbols__["k" /* ctorPropsMap */]];
 }
 
-
 /***/ }),
 /* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2098,10 +2082,9 @@ function getPropsMap (Ctor) {
  * This is needed to avoid IE11 "stack size errors" when creating
  * a new property on the constructor of an HTMLElement
  */
-function setCtorNativeProperty (Ctor, propName, value) {
+function setCtorNativeProperty(Ctor, propName, value) {
   Object.defineProperty(Ctor, propName, { configurable: true, value });
 }
-
 
 /***/ }),
 /* 14 */
@@ -2113,10 +2096,9 @@ function setCtorNativeProperty (Ctor, propName, value) {
 /**
  * Attributes value can only be null or string;
  */
-const toNullOrString = val => (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__empty__["a" /* default */])(val) ? null : String(val));
+const toNullOrString = val => __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__empty__["a" /* default */])(val) ? null : String(val);
 
 /* harmony default export */ __webpack_exports__["a"] = (toNullOrString);
-
 
 /***/ }),
 /* 15 */
@@ -2153,7 +2135,6 @@ const toNullOrString = val => (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0
 
 
 const h = __WEBPACK_IMPORTED_MODULE_2__api_vdom__["a" /* builder */]();
-
 
 
 
@@ -2202,7 +2183,7 @@ customElements.define("my-component", MyComponent);
 
 /* unused harmony default export */ var _unused_webpack_default_export = (function (...args) {
   const { customElements, HTMLElement } = __WEBPACK_IMPORTED_MODULE_2__util_root__["a" /* default */];
-  let [ name, Ctor ] = args;
+  let [name, Ctor] = args;
 
   if (!customElements) {
     throw new Error('Skate requires native custom element support or a polyfill.');
@@ -2248,7 +2229,6 @@ customElements.define("my-component", MyComponent);
   // The spec doesn't return but this allows for a simpler, more concise API.
   return Ctor;
 });
-
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(9)))
 
 /***/ }),
@@ -2259,7 +2239,7 @@ customElements.define("my-component", MyComponent);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_root__ = __webpack_require__(3);
 
 
-const Event = ((TheEvent) => {
+const Event = (TheEvent => {
   if (TheEvent) {
     try {
       new TheEvent('emit-init'); // eslint-disable-line no-new
@@ -2270,7 +2250,7 @@ const Event = ((TheEvent) => {
   return TheEvent;
 })(__WEBPACK_IMPORTED_MODULE_0__util_root__["a" /* default */].Event);
 
-function createCustomEvent (name, opts = {}) {
+function createCustomEvent(name, opts = {}) {
   const { detail } = opts;
   delete opts.detail;
 
@@ -2299,7 +2279,6 @@ function createCustomEvent (name, opts = {}) {
   return elem.dispatchEvent(createCustomEvent(name, opts));
 });
 
-
 /***/ }),
 /* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2308,7 +2287,7 @@ function createCustomEvent (name, opts = {}) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__props__ = __webpack_require__(7);
 
 
-function getValue (elem) {
+function getValue(elem) {
   const type = elem.type;
   if (type === 'checkbox' || type === 'radio') {
     return elem.checked ? elem.value || true : false;
@@ -2317,7 +2296,7 @@ function getValue (elem) {
 }
 
 /* unused harmony default export */ var _unused_webpack_default_export = (function (elem, target) {
-  return (e) => {
+  return e => {
     // We fallback to checking the composed path. Unfortunately this behaviour
     // is difficult to impossible to reproduce as it seems to be a possible
     // quirk in the shadydom polyfill that incorrectly returns null for the
@@ -2331,7 +2310,7 @@ function getValue (elem) {
       const parts = localTargetName.split('.');
       const firstPart = parts[0];
       const propName = parts.pop();
-      const obj = parts.reduce((prev, curr) => (prev && prev[curr]), elem);
+      const obj = parts.reduce((prev, curr) => prev && prev[curr], elem);
 
       obj[propName || e.target.name] = value;
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__props__["a" /* default */])(elem, {
@@ -2344,7 +2323,6 @@ function getValue (elem) {
     }
   };
 });
-
 
 /***/ }),
 /* 20 */
@@ -2360,17 +2338,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-function create (def) {
+function create(def) {
   return (...args) => {
     args.unshift({}, def);
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__util_assign__["a" /* default */])(...args);
   };
 }
 
-const parseIfNotEmpty = val => (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_empty__["a" /* default */])(val) ? null : JSON.parse(val));
+const parseIfNotEmpty = val => __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_empty__["a" /* default */])(val) ? null : JSON.parse(val);
 
 const array = create({
-  coerce: val => (Array.isArray(val) ? val : (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_empty__["a" /* default */])(val) ? null : [val])),
+  coerce: val => Array.isArray(val) ? val : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_empty__["a" /* default */])(val) ? null : [val],
   default: () => [],
   deserialize: parseIfNotEmpty,
   serialize: JSON.stringify
@@ -2385,13 +2363,13 @@ const boolean = create({
   // This breaks one existing test.
   // deserialize: val => !(val === null || val === 'false'),
   deserialize: val => !(val === null),
-  serialize: val => (val ? '' : null)
+  serialize: val => val ? '' : null
 });
 /* harmony export (immutable) */ __webpack_exports__["boolean"] = boolean;
 
 
 // defaults empty to 0 and allows NaN
-const zeroIfEmptyOrNumberIncludesNaN = val => (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_empty__["a" /* default */])(val) ? 0 : Number(val));
+const zeroIfEmptyOrNumberIncludesNaN = val => __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_empty__["a" /* default */])(val) ? 0 : Number(val);
 
 const number = create({
   default: 0,
@@ -2419,7 +2397,6 @@ const object = create({
 /* harmony export (immutable) */ __webpack_exports__["object"] = object;
 
 
-
 /***/ }),
 /* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2441,7 +2418,6 @@ const object = create({
   }
 });
 
-
 /***/ }),
 /* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2453,7 +2429,6 @@ const object = create({
 //
 // We should not be relying on internals for symbols as this creates version
 // coupling. We will move forward with platform agnostic ways of doing this.
-
 
 
 /***/ }),
@@ -2506,7 +2481,7 @@ let skips = 0;
 const noop = () => {};
 
 // Adds or removes an event listener for an element.
-function applyEvent (elem, ename, newFunc) {
+function applyEvent(elem, ename, newFunc) {
   let events = elem[$currentEventHandlers];
 
   if (!events) {
@@ -2543,12 +2518,12 @@ const attributesContext = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__uti
   value: __WEBPACK_IMPORTED_MODULE_0_incremental_dom__["applyProp"],
 
   // Ref handler.
-  ref (elem, name, value) {
+  ref(elem, name, value) {
     elem[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["l" /* ref */]] = value;
   },
 
   // Skip handler.
-  skip (elem, name, value) {
+  skip(elem, name, value) {
     if (value) {
       elem[$skip] = true;
     } else {
@@ -2557,7 +2532,7 @@ const attributesContext = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__uti
   },
 
   // Default attribute applicator.
-  [__WEBPACK_IMPORTED_MODULE_0_incremental_dom__["symbols"].default] (elem, name, value) {
+  [__WEBPACK_IMPORTED_MODULE_0_incremental_dom__["symbols"].default](elem, name, value) {
     const ce = customElements.get(elem.localName);
     const props = ce && ce.props || {};
     const prototype = ce && ce.prototype || {};
@@ -2607,7 +2582,7 @@ const attributesContext = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__uti
   }
 });
 
-function resolveTagName (name) {
+function resolveTagName(name) {
   // We return falsy values as some wrapped IDOM functions allow empty values.
   if (!name) {
     return name;
@@ -2628,7 +2603,7 @@ function resolveTagName (name) {
 
     // eslint-disable-next-line
     const elem = new name();
-    return (elem[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["m" /* name */]] = elem.localName);
+    return elem[__WEBPACK_IMPORTED_MODULE_1__util_symbols__["m" /* name */]] = elem.localName;
   }
 
   // Pass all other values through so IDOM gets what it's expecting.
@@ -2639,18 +2614,18 @@ function resolveTagName (name) {
 // so it's the only function we need to execute in the context of our attributes.
 const elementOpen = attributesContext(__WEBPACK_IMPORTED_MODULE_0_incremental_dom__["elementOpen"]);
 
-function elementOpenStart (tag, key = null, statics = null) {
+function elementOpenStart(tag, key = null, statics = null) {
   overrideArgs = [tag, key, statics];
 }
 
-function elementOpenEnd () {
+function elementOpenEnd() {
   const node = newElementOpen(...overrideArgs); // eslint-disable-line no-use-before-define
   overrideArgs = null;
   return node;
 }
 
-function wrapIdomFunc (func, tnameFuncHandler = noop) {
-  return function wrap (...args) {
+function wrapIdomFunc(func, tnameFuncHandler = noop) {
+  return function wrap(...args) {
     args[0] = resolveTagName(args[0]);
     stackCurrentHelper = null;
     if (typeof args[0] === 'function') {
@@ -2705,14 +2680,14 @@ function wrapIdomFunc (func, tnameFuncHandler = noop) {
 
       // We must call elementOpenStart and elementOpenEnd even if we are
       // skipping because they queue up attributes and then call elementClose.
-      if (!skips || (func === elementOpenStart || func === elementOpenEnd)) {
+      if (!skips || func === elementOpenStart || func === elementOpenEnd) {
         return func(...args);
       }
     }
   };
 }
 
-function newAttr (...args) {
+function newAttr(...args) {
   if (stackCurrentHelper) {
     stackCurrentHelper[$stackCurrentHelperProps][args[0]] = args[1];
   } else if (stackChren.length) {
@@ -2723,7 +2698,7 @@ function newAttr (...args) {
   }
 }
 
-function stackOpen (tname, key, statics, ...attrs) {
+function stackOpen(tname, key, statics, ...attrs) {
   const props = { key, statics };
   for (let a = 0; a < attrs.length; a += 2) {
     props[attrs[a]] = attrs[a + 1];
@@ -2732,7 +2707,7 @@ function stackOpen (tname, key, statics, ...attrs) {
   stackChren.push([]);
 }
 
-function stackClose (tname) {
+function stackClose(tname) {
   const chren = stackChren.pop();
   const props = tname[$stackCurrentHelperProps];
   delete tname[$stackCurrentHelperProps];
@@ -2756,7 +2731,7 @@ const newElementOpen = wrapIdomFunc(elementOpen, stackOpen);
 const newElementClose = wrapIdomFunc(__WEBPACK_IMPORTED_MODULE_0_incremental_dom__["elementClose"], stackClose);
 
 // Ensure we call our overridden functions instead of the internal ones.
-function newElementVoid (tag, ...args) {
+function newElementVoid(tag, ...args) {
   newElementOpen(tag, ...args);
   return newElementClose(tag);
 }
@@ -2766,7 +2741,7 @@ const newText = wrapIdomFunc(__WEBPACK_IMPORTED_MODULE_0_incremental_dom__["text
 
 // Convenience function for declaring an Incremental DOM element using
 // hyperscript-style syntax.
-function element (tname, attrs, ...chren) {
+function element(tname, attrs, ...chren) {
   const atype = typeof attrs;
 
   // If attributes are a function, then they should be treated as children.
@@ -2793,7 +2768,7 @@ function element (tname, attrs, ...chren) {
   // Close before we render the descendant tree.
   newElementOpenEnd(tname);
 
-  chren.forEach((ch) => {
+  chren.forEach(ch => {
     const ctype = typeof ch;
     if (ctype === 'function') {
       ch();
@@ -2809,19 +2784,15 @@ function element (tname, attrs, ...chren) {
 
 // Even further convenience for building a DSL out of JavaScript functions or hooking into standard
 // transpiles for JSX (React.createElement() / h).
-function builder (...tags) {
+function builder(...tags) {
   if (tags.length === 0) {
     return (...args) => element.bind(null, ...args);
   }
-  return tags.map(tag =>
-    (...args) =>
-      element.bind(null, tag, ...args)
-  );
+  return tags.map(tag => (...args) => element.bind(null, tag, ...args));
 }
 
 // We don't have to do anything special for the text function; it's just a
 // straight export from Incremental DOM.
-
 
 
 /***/ }),
@@ -2845,7 +2816,7 @@ function builder (...tags) {
 
 
 
-function createNativePropertyDescriptor (propDef) {
+function createNativePropertyDescriptor(propDef) {
   const { nameOrSymbol } = propDef;
 
   const prop = {
@@ -2883,8 +2854,7 @@ function createNativePropertyDescriptor (propDef) {
     propData.internalValue = initialValue;
 
     // Reflect to Target Attribute
-    const mustReflect = propDef.attrTarget && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_empty__["a" /* default */])(initialValue) &&
-      (!valueFromAttrSource || propDef.attrTargetIsNotSource);
+    const mustReflect = propDef.attrTarget && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_empty__["a" /* default */])(initialValue) && (!valueFromAttrSource || propDef.attrTargetIsNotSource);
 
     if (mustReflect) {
       let serializedValue = propDef.serialize(initialValue);
@@ -2892,13 +2862,13 @@ function createNativePropertyDescriptor (propDef) {
     }
   };
 
-  prop.get = function get () {
+  prop.get = function get() {
     const propData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_get_prop_data__["a" /* default */])(this, nameOrSymbol);
     const { internalValue } = propData;
     return propDef.get ? propDef.get(this, { name: nameOrSymbol, internalValue }) : internalValue;
   };
 
-  prop.set = function set (newValue) {
+  prop.set = function set(newValue) {
     const propData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_get_prop_data__["a" /* default */])(this, nameOrSymbol);
 
     const useDefaultValue = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_empty__["a" /* default */])(newValue);
@@ -2925,8 +2895,7 @@ function createNativePropertyDescriptor (propDef) {
     propData.internalValue = propData.oldValue = newValue;
 
     // Reflect to Target attribute.
-    const mustReflect = propDef.attrTarget &&
-      (propDef.attrTargetIsNotSource || !propData.settingPropFromAttrSource);
+    const mustReflect = propDef.attrTarget && (propDef.attrTargetIsNotSource || !propData.settingPropFromAttrSource);
     if (mustReflect) {
       // Note: setting the prop to empty implies the default value
       // and therefore no attribute should be present!
@@ -2937,7 +2906,6 @@ function createNativePropertyDescriptor (propDef) {
 
   return prop;
 }
-
 
 /***/ }),
 /* 25 */
@@ -2951,7 +2919,8 @@ function createNativePropertyDescriptor (propDef) {
 if (!Object.is) {
   Object.is = function (x, y) {
     // SameValue algorithm
-    if (x === y) { // Steps 1-5, 7-10
+    if (x === y) {
+      // Steps 1-5, 7-10
       // Steps 6.b-6.e: +0 != -0
       return x !== 0 || 1 / x === 1 / y;
     } else {
@@ -2962,17 +2931,15 @@ if (!Object.is) {
 }
 /* harmony default export */ __webpack_exports__["a"] = (Object.is);
 
-
 /***/ }),
 /* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createSymbol;
-function createSymbol (description) {
+function createSymbol(description) {
   return typeof Symbol === 'function' ? Symbol(description) : description;
 }
-
 
 /***/ }),
 /* 27 */
@@ -2986,7 +2953,6 @@ function createSymbol (description) {
   });
 });
 
-
 /***/ }),
 /* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2999,7 +2965,7 @@ function createSymbol (description) {
 
 const { MutationObserver } = __WEBPACK_IMPORTED_MODULE_1__root__["a" /* default */];
 
-function microtaskDebounce (cbFunc) {
+function microtaskDebounce(cbFunc) {
   let scheduled = false;
   let i = 0;
   let cbArgs = [];
@@ -3028,7 +2994,7 @@ function microtaskDebounce (cbFunc) {
 //
 // The soonest we can set the timeout for in IE is 1 as they have issues when
 // setting to 0.
-function taskDebounce (cbFunc) {
+function taskDebounce(cbFunc) {
   let scheduled = false;
   let cbArgs = [];
   return (...args) => {
@@ -3044,17 +3010,15 @@ function taskDebounce (cbFunc) {
 }
 /* harmony default export */ __webpack_exports__["a"] = (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__native__["a" /* default */])(MutationObserver) ? microtaskDebounce : taskDebounce);
 
-
 /***/ }),
 /* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = error;
-function error (message) {
+function error(message) {
   throw new Error(message);
 }
-
 
 /***/ }),
 /* 30 */
@@ -3062,12 +3026,9 @@ function error (message) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getDefaultValue;
-function getDefaultValue (elem, propDef) {
-  return typeof propDef.default === 'function'
-    ? propDef.default(elem, { name: propDef.nameOrSymbol })
-    : propDef.default;
+function getDefaultValue(elem, propDef) {
+  return typeof propDef.default === 'function' ? propDef.default(elem, { name: propDef.nameOrSymbol }) : propDef.default;
 }
-
 
 /***/ }),
 /* 31 */
@@ -3075,12 +3036,9 @@ function getDefaultValue (elem, propDef) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getInitialValue;
-function getInitialValue (elem, propDef) {
-  return typeof propDef.initial === 'function'
-    ? propDef.initial(elem, { name: propDef.nameOrSymbol })
-    : propDef.initial;
+function getInitialValue(elem, propDef) {
+  return typeof propDef.initial === 'function' ? propDef.initial(elem, { name: propDef.nameOrSymbol }) : propDef.initial;
 }
-
 
 /***/ }),
 /* 32 */
@@ -3097,7 +3055,6 @@ function getInitialValue (elem, propDef) {
   }, {});
 });
 
-
 /***/ }),
 /* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -3107,25 +3064,19 @@ function getInitialValue (elem, propDef) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data__ = __webpack_require__(5);
 
 
-function getPropData (elem, name) {
+function getPropData(elem, name) {
   const elemData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__data__["a" /* default */])(elem, 'props');
   return elemData[name] || (elemData[name] = {});
 }
-
 
 /***/ }),
 /* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const nativeHints = [
-  'native code',
-  '[object MutationObserverConstructor]' // for mobile safari iOS 9.0
+const nativeHints = ['native code', '[object MutationObserverConstructor]' // for mobile safari iOS 9.0
 ];
-/* harmony default export */ __webpack_exports__["a"] = (fn => nativeHints.map(
-  (hint) => (fn || '').toString().indexOf([hint]) > -1
-).reduce((a, b) => a || b));
-
+/* harmony default export */ __webpack_exports__["a"] = (fn => nativeHints.map(hint => (fn || '').toString().indexOf([hint]) > -1).reduce((a, b) => a || b));
 
 /***/ }),
 /* 35 */
@@ -3135,16 +3086,16 @@ const nativeHints = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__assign__ = __webpack_require__(4);
 
 
-function enter (object, props) {
+function enter(object, props) {
   const saved = {};
-  Object.keys(props).forEach((key) => {
+  Object.keys(props).forEach(key => {
     saved[key] = object[key];
     object[key] = props[key];
   });
   return saved;
 }
 
-function exit (object, saved) {
+function exit(object, saved) {
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__assign__["a" /* default */])(object, saved);
 }
 
@@ -3160,7 +3111,6 @@ function exit (object, saved) {
     return result;
   };
 });
-
 
 /***/ }),
 /* 36 */
@@ -3190,7 +3140,7 @@ function exit (object, saved) {
  */
 class PropDefinition {
 
-  constructor (nameOrSymbol, propOptions) {
+  constructor(nameOrSymbol, propOptions) {
     this._nameOrSymbol = nameOrSymbol;
 
     propOptions = propOptions || {};
@@ -3221,7 +3171,7 @@ class PropDefinition {
     // Its presence is tested using: ('initial' in propDef)
 
     // 'serialize' default: return string value or null
-    this.serialize = value => (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__empty__["a" /* default */])(value) ? null : String(value));
+    this.serialize = value => __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__empty__["a" /* default */])(value) ? null : String(value);
 
     // default 'set': no function
     this.set = null;
@@ -3268,7 +3218,7 @@ class PropDefinition {
     });
   }
 
-  get nameOrSymbol () {
+  get nameOrSymbol() {
     return this._nameOrSymbol;
   }
 
@@ -3276,7 +3226,7 @@ class PropDefinition {
 /* harmony export (immutable) */ __webpack_exports__["a"] = PropDefinition;
 
 
-function resolveAttrName (attrOption, nameOrSymbol) {
+function resolveAttrName(attrOption, nameOrSymbol) {
   if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__is_type__["d" /* isSymbol */])(nameOrSymbol)) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__error__["a" /* default */])(`${nameOrSymbol.toString()} symbol property cannot have an attribute.`);
   } else {
@@ -3290,7 +3240,6 @@ function resolveAttrName (attrOption, nameOrSymbol) {
   return null;
 }
 
-
 /***/ }),
 /* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -3298,17 +3247,16 @@ function resolveAttrName (attrOption, nameOrSymbol) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = uniqueId;
 // DEPRECATED prefix when we deprecated the name argument to define()
-function uniqueId (prefix) {
+function uniqueId(prefix) {
   // http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript/2117523#2117523
-  const rand = 'xxxxxxxx'.replace(/[xy]/g, (c) => {
+  const rand = 'xxxxxxxx'.replace(/[xy]/g, c => {
     const r = Math.random() * 16 | 0;
     // eslint-disable-next-line no-mixed-operators
-    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    const v = c === 'x' ? r : r & 0x3 | 0x8;
     return v.toString(16);
   });
   return `${prefix || 'x'}-${rand}`;
 }
-
 
 /***/ }),
 /* 38 */
@@ -3317,17 +3265,16 @@ function uniqueId (prefix) {
 var g;
 
 // This works in non-strict mode
-g = (function() {
+g = function () {
 	return this;
-})();
+}();
 
 try {
 	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
 	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
+	if (typeof window === "object") g = window;
 }
 
 // g can still be undefined, but nothing to do about it...
@@ -3335,7 +3282,6 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
-
 
 /***/ })
 /******/ ]);

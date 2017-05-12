@@ -4,15 +4,17 @@ module.exports = {
 
     entry: './index.js',
 
-    // module: {
-    //     loaders: [
-    //         {
-    //             test: /\.js$/,
-    //             exclude: /node_modules/,
-    //             loader: 'babel-loader'
-    //         }
-    //     ]
-    // },
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                options: {
+                    plugins: [require('babel-plugin-transform-class-properties')]
+                }
+            }
+        ]
+    },
 
     output: {
         filename: 'app.js',
